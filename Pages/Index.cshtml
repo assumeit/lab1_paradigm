@@ -1,0 +1,95 @@
+﻿@page
+@model aspnetcoreapp.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Asmit's Calculator</h1>
+
+    <form method="post">
+        <input type="text" placeholder="First Number" name="num1">
+        <input type="text" placeholder="Second Number" name="num2">
+        
+        <input type="submit" value="SQR" name="SQR">
+        <input type="submit" value="*" name="MULT">
+        <input type="submit" value="PWR" name="PWR">
+        <input type="submit" value="+" name="ADD">
+        <input type="submit" value="Cube" name="Cube">
+        <input type="submit" value="-" name="Minus">
+        <input type="submit" value="/" name="DIVIDE">
+<br>
+<br>
+      <p>Result:</p>
+
+ <input type="text" value="@ViewData["result"]" name="result" readonly>
+
+
+    </form>
+
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<style>
+    .text-center {
+        text-align: center;
+    }
+    .display-4 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: #fff;
+    }
+    body {
+        background-color: #000;
+        color: #fff;
+    }
+    form {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    input[type="text"] {
+        grid-column: span 4;
+        padding: 15px;
+        font-size: 1.5rem;
+        border-radius: 10px;
+        border: 1px solid #333;
+        background-color: #222;
+        color: #fff;
+        text-align: right;
+    }
+    input[type="submit"] {
+        padding: 20px;
+        font-size: 1.5rem;
+        border-radius: 50%;
+        border: none;
+        background-color: #ffcc00;
+        color: #000;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    input[type="submit"]:hover {
+        background-color: #ffbf00;
+        color: #fff;
+    }
+    .result-field {
+        grid-column: span 4;
+        margin-top: 20px;
+        text-align: center;
+    }
+    .result-field label {
+        font-weight: bold;
+        color: #fff;
+    }
+    .result-field input {
+        border: none;
+        background-color: #222;
+        padding: 15px;
+        font-size: 1.5rem;
+        text-align: right;
+        color: #fff;
+    }
+</style>
+
